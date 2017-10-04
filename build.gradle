@@ -1,0 +1,44 @@
+apply plugin: 'java'
+apply plugin: 'org.junit.platform.gradle.plugin'
+apply plugin: 'eclipse'
+
+group = GROUP
+version = VERSION
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.2'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+buildscript {
+	repositories {
+	    mavenCentral()
+	}
+    dependencies {
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	compile group: 'org.slf4j', name: 'slf4j-api', version: SLF4J_VERSION
+	compile group: 'org.slf4j', name: 'slf4j-simple', version: SLF4J_VERSION
+    
+    compile group: 'com.google.guava', name: 'guava', version: GUAVA_VERSION
+
+	// JUnit Jupiter API for writing tests and extensions.
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: JUNIT_JUPITER_VERSION
+    // JUnit Jupiter test engine implementation, only required at runtime.
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: JUNIT_JUPITER_VERSION
+    // Support for parameterized tests in JUnit Jupiter.
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: JUNIT_JUPITER_VERSION
+    
+    testCompile group: 'org.mockito', name: 'mockito-core', version:'2.+'
+    
+    testCompile group: 'com.google.guava', name: 'guava-testlib', version: '23.0'
+}
