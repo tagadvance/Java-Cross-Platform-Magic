@@ -9,7 +9,7 @@ public class OperatingSystem {
 
 	private final String name, version, architecture;
 
-	public static OperatingSystem create() {
+	public static OperatingSystem getInstance() {
 		return new OperatingSystem(StandardSystemProperty.OS_NAME.value(),
 				StandardSystemProperty.OS_VERSION.value(), StandardSystemProperty.OS_ARCH.value());
 	}
@@ -46,7 +46,7 @@ public class OperatingSystem {
 	}
 
 	public static void main(String[] args) {
-		OperatingSystem os = OperatingSystem.create();
+		OperatingSystem os = OperatingSystem.getInstance();
 		System.out.println(os);
 	}
 
