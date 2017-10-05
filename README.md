@@ -5,7 +5,16 @@ Java Cross-Platform Magic uses the service locator anti-pattern to register and 
 ## Install
 Gradle:
 ```groovy
-compile group: 'com.tagadvance', name: 'java-cross-platform-magic', version: 'alpha'
+repositories {
+    jcenter()
+    maven {
+        url  "https://dl.bintray.com/tagadvance/GitHub" 
+    }
+}
+
+dependencies {
+	compile group: 'com.tagadvance', name: 'java-cross-platform-magic', version: 'alpha'
+}
 ```
 
 ## Examples
