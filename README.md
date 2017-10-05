@@ -2,6 +2,12 @@
 
 Java Cross-Platform Magic uses the service locator anti-pattern to register and resolve cross-platform dependencies at runtime.
 
+## Install
+Gradle:
+```groovy
+compile group: 'com.tagadvance', name: 'java-cross-platform-magic', version: 'alpha'
+```
+
 ## Examples
 ```java
 public interface Foo {
